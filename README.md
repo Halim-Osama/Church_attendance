@@ -315,23 +315,6 @@ CREATE TABLE attendance_history (
 
 ---
 
-## 📊 Data Overview
-
-The database was pre-populated from the church's existing Excel records:
-
-| Category | Count |
-|----------|-------|
-| Total Students | **398** |
-| KG1 | 45 |
-| KG2 | 29 |
-| Grades 1–6 (Primary) | 170 |
-| Grades 7–9 (Prep) | 89 |
-| Grades 10–12 (Secondary) | 63 |
-| **Total Teachers / Servants** | **131** |
-| Primary Department (ابتدائي) | 85 |
-| Prep & Secondary (إعدادي وثانوي) | 34 |
-| Activities (أنشطة) | 12 |
-
 ---
 
 ## 🤝 Contributing
