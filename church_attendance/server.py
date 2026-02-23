@@ -11,8 +11,6 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
-DB_PATH      = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'church.DB')
-FRONTEND_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ─── In-memory session store: token → session dict ────────────────────────────
 sessions: dict = {}
@@ -23,8 +21,8 @@ sessions: dict = {}
 # ══════════════════════════════════════════════════════════════════════════════
 
 def get_conn():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    
+    
     return conn
 
 
@@ -48,7 +46,7 @@ def init_db():
     c.execute(
         "INSERT OR IGNORE INTO app_users (name, username, password_hash, role) "
         "VALUES ('مسؤول النظام', 'admin', ?, 'admin')",
-        (hashlib.sha256('virginmarry'.encode()).hexdigest(),)
+        (hashlib.sha256(''.encode()).hexdigest(),)
     )
 
     # Students
@@ -923,11 +921,8 @@ if __name__ == '__main__':
     server = HTTPServer(('localhost', PORT), Handler)
     print(f"""
 ╔══════════════════════════════════════════════╗
-║  Church Attendance System  —  Server Ready   ║
-╠══════════════════════════════════════════════╣
-║  URL:       http://localhost:{PORT}             ║
-║  Username:  admin                            ║
-║  Password:  virginmarry                      ║
+║   System  —  Server Ready   ║
+                     ║
 ╚══════════════════════════════════════════════╝
 """)
     try:
