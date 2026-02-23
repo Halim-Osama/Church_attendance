@@ -156,17 +156,6 @@ chmod +x start.sh
 python3 server.py
 ```
 
-### Open in Browser
-
-Once the server is running, open your browser and go to:
-
-```
-http://localhost:5000
-```
-
-### Default Password
-```
-virginmarry
 ```
 
 ---
